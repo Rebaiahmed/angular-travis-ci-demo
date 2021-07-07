@@ -16,3 +16,11 @@ script:
 - ng lint
 - npm run test-headless
 - ng build --prod --base-href https://rebaiahmed.github.io/angular-travis-ci-demo
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/angular-travis-demo
+  on:
+    branch: main
